@@ -1,0 +1,33 @@
+{
+  "name": "@cgvweb/vue-calendar",
+  "version": "0.0.0",
+  "repository": "https://github.com/ChrisGV04/vue-calendar",
+  "license": "MIT",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "release": "release-it && npm run build && npm publish"
+  },
+  "peerDependencies": {
+    "@internationalized/date": ">=3.5",
+    "vue": ">=3.4"
+  },
+  "devDependencies": {
+    "@internationalized/date": "^3.5.2",
+    "@release-it/conventional-changelog": "^8.0.1",
+    "@types/node": "^20.11.30",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "changelogen": "^0.5.5",
+    "prettier": "^3.2.5",
+    "release-it": "^17.1.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vue": "^3.4.21",
+    "vue-tsc": "^2.0.6"
+  }
+}
