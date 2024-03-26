@@ -7,10 +7,19 @@
   "publishConfig": {
     "access": "public"
   },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs"
+    }
+  },
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview",
+    "build": "pnpx rimraf dist && tsup src/*.ts --format cjs,esm --dts --minify",
+    "lint": "pnpm biome lint ./src",
     "release": "release-it && npm run build && npm publish"
   },
   "peerDependencies": {
@@ -18,13 +27,14 @@
     "vue": ">=3.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.6.3",
     "@internationalized/date": "^3.5.2",
     "@release-it/conventional-changelog": "^8.0.1",
     "@types/node": "^20.11.30",
     "@vitejs/plugin-vue": "^5.0.4",
     "changelogen": "^0.5.5",
-    "prettier": "^3.2.5",
     "release-it": "^17.1.1",
+    "tsup": "^8.0.2",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vue": "^3.4.21",
