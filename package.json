@@ -1,6 +1,6 @@
 {
   "name": "@cgvweb/vue-calendar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": "https://github.com/ChrisGV04/vue-calendar",
   "license": "MIT",
   "type": "module",
@@ -18,7 +18,9 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "pnpx rimraf dist && tsup src/*.ts --format cjs,esm --dts --minify",
     "lint": "pnpm biome lint ./src",
