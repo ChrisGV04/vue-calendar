@@ -13,10 +13,12 @@
   "types": "./dist/index.d.cts",
   "exports": {
     ".": {
-      "import": "./index.js",
-      "require": "./index.cjs"
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
     }
   },
+  "files": ["dist"],
   "scripts": {
     "build": "pnpx rimraf dist && tsup src/*.ts --format cjs,esm --dts --minify",
     "lint": "pnpm biome lint ./src",
